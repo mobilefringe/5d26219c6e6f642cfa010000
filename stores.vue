@@ -16,7 +16,7 @@
                                 <span class="legend"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon</span>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" v-if="listOne.length == 0 && listTwo.length == 0">
                             <div class="col-md-12">
                                 <p>Store details coming soon!</p>
                             </div>
