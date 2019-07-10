@@ -50,7 +50,7 @@ $primaryRGB: rgb(13, 70, 108);
 $secondary: #8f7032;
 $accent: #de910d;
 $text: #000;
-$secondary_text: #000;
+$secondary_text: #363636;
 
 /* *** GENERAL STYLES *** */
 html { 
