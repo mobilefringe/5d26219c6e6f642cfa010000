@@ -126,31 +126,37 @@
                 allStores() {
                     var all_stores = this.processedStores;
                     console.log("this.processedStores;", this.processedStores)
-                    var listOne = [];
-                    var listTwo = [];
-                    _.forEach( all_stores, function( value, key ) {
-                        if (_.startsWith(value.name, 'The ')) {
-                            value.name_sort = _.trimStart(value.name, 'The ')
-                            value.name_sort = _.trimStart(value.name_sort)
-                        } else {
-                            value.name_sort = value.name
-                        } 
-
-                        var starter = "A";
-                        var breaker = "M";
-                        var store_initial = _.toUpper(value.name_sort[0]);
-                        if (isNaN(store_initial)){
-                            if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
-                                listOne.push(value);
+                    if (all_stores.length > 0) {
+                        this.noStores = false; 
+                        
+                        var listOne = [];
+                        var listTwo = [];
+                        _.forEach( all_stores, function( value, key ) {
+                            if (_.startsWith(value.name, 'The ')) {
+                                value.name_sort = _.trimStart(value.name, 'The ')
+                                value.name_sort = _.trimStart(value.name_sort)
                             } else {
-                                listTwo.push(value);    
+                                value.name_sort = value.name
+                            } 
+    
+                            var starter = "A";
+                            var breaker = "M";
+                            var store_initial = _.toUpper(value.name_sort[0]);
+                            if (isNaN(store_initial)){
+                                if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
+                                    listOne.push(value);
+                                } else {
+                                    listTwo.push(value);    
+                                }
+                            } else {
+                                listOne.push(value);
                             }
-                        } else {
-                            listOne.push(value);
-                        }
-                    });
-                    this.listOne = _.groupBy(listOne, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
-                    this.listTwo = _.groupBy(listTwo, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
+                        });
+                        this.listOne = _.groupBy(listOne, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
+                        this.listTwo = _.groupBy(listTwo, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
+                    } else {
+                        this.noStores = true;
+                    }
                 },
                 dropDownCats() {
                     var cats = _.filter(this.processedCategories, function(o) { return o.store_ids !== null && o.store_ids.length > 0 });
