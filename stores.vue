@@ -125,6 +125,7 @@
                 ]), 
                 allStores() {
                     var all_stores = this.processedStores;
+                    console.log("this.processedStores;", this.processedStores)
                     var listOne = [];
                     var listTwo = [];
                     _.forEach( all_stores, function( value, key ) {
