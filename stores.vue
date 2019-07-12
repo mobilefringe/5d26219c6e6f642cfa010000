@@ -99,6 +99,7 @@
                 return {
                     dataLoaded: false,
                     pageName: "Stores",
+                    noStores: false,
                     sortByStores: true,
                     listOne: null,
                     listTwo: null,
