@@ -5,7 +5,12 @@
             <div v-if="dataLoaded" v-cloak>
                 <banner-component :page_name="pageName"></banner-component>
                 <div class="main_container margin_30">
-                    <div class="">
+                    <div class="row" v-if="noStores">
+                        <div class="col-md-12">
+                            <p>Store details coming soon!</p>
+                        </div>
+                    </div>
+                    <div v-else>
                         <div class="row store_nav">
                             <div class="col-md-6">
                                 <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" placeholder="FILTER LIST" id="selectByCat" transition="menu-fade"></v-select>
@@ -16,11 +21,7 @@
                                 <span class="legend"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon</span>
                             </div>
                         </div>
-                        <div class="row" v-if="listOne.length == 0 && listTwo.length == 0">
-                            <div class="col-md-12">
-                                <p>Store details coming soon!</p>
-                            </div>
-                        </div>
+                        
                         <div class="row" v-if="sortByStores">
                             <div class="col-md-6">
                                 <div v-if="listOne" v-for="(stores, index) in listOne">
