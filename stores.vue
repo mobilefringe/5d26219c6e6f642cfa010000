@@ -7,7 +7,7 @@
                 <div class="main_container margin_30">
                     <div class="row" v-if="noStores">
                         <div class="col-md-12">
-                            <p>Store details coming soon!</p>
+                            <h3>Please check back soon for Store Details</h3>
                         </div>
                     </div>
                     <div v-else>
