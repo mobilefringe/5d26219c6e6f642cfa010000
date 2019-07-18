@@ -82,9 +82,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" v-if="noStores">
+                        <div class="row" v-if="storeList.length <= 10">
                             <div class="col-md-12">
-                                <h3>Please check back soon for Store Details!</h3>
+                                <h3>The Marketplace at Calimesa will have more stores soon!</h3>
                             </div>
                         </div>
                     </div>
