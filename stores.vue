@@ -21,7 +21,6 @@
                                 <span class="legend"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon</span>
                             </div>
                         </div>
-                        
                         <div class="row" v-if="sortByStores">
                             <div class="col-md-6">
                                 <div v-if="listOne" v-for="(stores, index) in listOne">
@@ -83,6 +82,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row" v-if="noStores">
+                            <div class="col-md-12">
+                                <h3>Please check back soon for Store Details!</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,6 +105,7 @@
                     dataLoaded: false,
                     pageName: "Stores",
                     noStores: false,
+                    storeList: {},
                     sortByStores: true,
                     listOne: null,
                     listTwo: null,
@@ -127,7 +132,6 @@
                 ]), 
                 allStores() {
                     var all_stores = this.processedStores;
-                    console.log("this.processedStores;", this.processedStores)
                     if (all_stores.length > 0) {
                         this.noStores = false; 
                         
@@ -156,6 +160,8 @@
                         });
                         this.listOne = _.groupBy(listOne, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
                         this.listTwo = _.groupBy(listTwo, store => (isNaN(_.upperCase(store.name_sort.charAt(0))) ? _.upperCase(store.name_sort.charAt(0)) : "#"));
+                        
+                        this.storeList = _.concat(listOne, listTwo);
                     } else {
                         this.noStores = true;
                     }
