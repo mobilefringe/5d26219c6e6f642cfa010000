@@ -148,7 +148,7 @@
                             // var starter = "A";
                             // var breaker = "M";
                             var starter = "A";
-                            var breaker = "s";
+                            var breaker = "S";
                             var store_initial = _.toUpper(value.name_sort[0]);
                             if (isNaN(store_initial)){
                                 if (store_initial.charCodeAt(0) <= breaker.charCodeAt(0) && store_initial.charCodeAt(0) >= starter.charCodeAt(0)){
