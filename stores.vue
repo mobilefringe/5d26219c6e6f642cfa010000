@@ -85,7 +85,7 @@
                         
                     </div>
                 </div>
-                <div class="main_container margin_30">
+                <div class="main_container">
                     <div class="row" v-if="storeList.length <= 10">
                         <div class="col-md-12 text-center">
                             <h4>Sign up for our newsletter to stay up to date on our growing list of new stores!</h4>
