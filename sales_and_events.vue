@@ -51,8 +51,8 @@
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <!--<p>Sorry, there are no Events posted at this time. Please check back soon!</p>-->
-                                                <p>Coming Soon.</p>
+                                                <p>Sorry, there are no Events posted at this time. Please check back soon!</p>
+                                                
                                             </div>
                                         </div>
                                         <hr class="promo_separator" />
