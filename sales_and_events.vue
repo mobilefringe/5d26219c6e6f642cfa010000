@@ -67,7 +67,7 @@
                                         <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
-                                <p>Coming soon</p>
+                                
                                 <!--<b-collapse v-if="promoList.length >= 1" v-for="promo in promoList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">-->
                                 <!--    <b-card-body>-->
                                 <!--        <div class="row">-->
@@ -105,7 +105,8 @@
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p>Sorry. There are no Sales posted at this time. Please check back soon!</p>
+                                                <!--<p>Sorry. There are no Sales posted at this time. Please check back soon!</p>-->
+                                                <p>Coming Soon.</p>
                                             </div>
                                         </div>
                                         <hr class="promo_separator" />
