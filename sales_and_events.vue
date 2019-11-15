@@ -176,6 +176,7 @@
                     var vm = this;
                     var promos = this.processedPromos;
                     var showPromos = [];
+// comment back in when site is live
                     // _.forEach(promos, function(value, key) {
                     //     var today = moment.tz(this.timezone).format();
                     //     var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
@@ -202,6 +203,7 @@
                     if (sortedPromos.length > 0) {
                         this.togglePromos = true;
                     }
+// comment back in when site is live
                     // return sortedPromos;
                     return showPromos;
                 }
