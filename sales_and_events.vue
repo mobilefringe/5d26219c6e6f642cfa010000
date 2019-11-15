@@ -153,26 +153,24 @@
                     var vm = this;
                     var events = this.processedEvents;
                     var showEvents = [];
-// comment back in when site is live
-                    // _.forEach(events, function (value, key) {
-                    //     var today = moment.tz(this.timezone).format();
-                    //     var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
-                    //     if (today >= showOnWebDate) {
-                    //         if (_.includes(value.image_url, 'missing')) {
-                    //             value.image_url = vm.siteInfo.default_logo_url;
-                    //         }
+                    _.forEach(events, function (value, key) {
+                        var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = vm.siteInfo.default_logo_url;
+                            }
                             
-                    //         value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
                             
-                    //         showEvents.push(value);
-                    //     }
-                    // });
-                    // var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
-                    // if (sortedEvents.length > 0) {
-                    //     this.toggleEvents = true;
-                    // }
-                    // return sortedEvents
-                    return showEvents;
+                            showEvents.push(value);
+                        }
+                    });
+                    var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
+                    if (sortedEvents.length > 0) {
+                        this.toggleEvents = true;
+                    }
+                    return sortedEvents
                 },
                 promoList: function promos() {
                     var vm = this;
