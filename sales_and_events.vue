@@ -176,34 +176,34 @@
                     var vm = this;
                     var promos = this.processedPromos;
                     var showPromos = [];
-                    _.forEach(promos, function(value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
-                        if (today >= showOnWebDate) {
-                            if (_.includes(value.image_url, 'missing')) {
-                                if (_.isEmpty(value.store)) {
-                                    value.image_url = vm.siteInfo.default_logo_url;
-                                } else {
-                                    if (_.includes(value.store.store_front_url_abs, 'missing')) {
-                                        value.no_logo = true;
-                                        value.store_name = value.store.name;
-                                    } else {
-                                        value.image_url = value.store.store_front_url_abs;
-                                    }
-                                }
-                            }
+                    // _.forEach(promos, function(value, key) {
+                    //     var today = moment.tz(this.timezone).format();
+                    //     var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                    //     if (today >= showOnWebDate) {
+                    //         if (_.includes(value.image_url, 'missing')) {
+                    //             if (_.isEmpty(value.store)) {
+                    //                 value.image_url = vm.siteInfo.default_logo_url;
+                    //             } else {
+                    //                 if (_.includes(value.store.store_front_url_abs, 'missing')) {
+                    //                     value.no_logo = true;
+                    //                     value.store_name = value.store.name;
+                    //                 } else {
+                    //                     value.image_url = value.store.store_front_url_abs;
+                    //                 }
+                    //             }
+                    //         }
                             
-                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                    //         value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
                             
-                            showPromos.push(value);
-                        }
-                    });
+                    //         showPromos.push(value);
+                    //     }
+                    // });
                     var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
                     if (sortedPromos.length > 0) {
                         this.togglePromos = true;
                     }
                     // return sortedPromos;
-                    return null;
+                    return showPromos;
                 }
             },
             methods: {
