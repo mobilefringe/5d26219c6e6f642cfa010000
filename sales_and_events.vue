@@ -69,7 +69,7 @@
                                     </b-btn>
                                 </b-card-header>
                                 
-                                <!--<b-collapse v-if="promoList.length >= 1" v-for="promo in promoList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">-->
+                                <b-collapse v-if="promoList.length >= 1" v-for="promo in promoList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                 <!--    <b-card-body>-->
                                 <!--        <div class="row">-->
                                 <!--            <div class="col-md-5">-->
@@ -101,8 +101,8 @@
                                 <!--        </div>-->
                                 <!--        <hr class="promo_separator" />-->
                                 <!--    </b-card-body>-->
-                                <!--</b-collapse>-->
-                                <!--<b-collapse v-if="promoList.length == 0" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">-->
+                                </b-collapse>
+                                <b-collapse v-if="promoList.length == 0" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-12">
