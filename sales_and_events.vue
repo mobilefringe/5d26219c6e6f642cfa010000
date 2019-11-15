@@ -15,8 +15,8 @@
                                 <b-card-header header-tag="header" class="p-1" role="tab">
                                     <b-btn block @click="toggleEvents = !toggleEvents" :aria-expanded="toggleEvents ? 'true' : 'false'" aria-controls="toggleEvents">
                                         Events
-                                        <!--<i v-if="toggleEvents"  class="fa fa-minus f"></i>-->
-                                        <!--<i v-else  class="fa fa-plus"></i>-->
+                                        <i v-if="toggleEvents"  class="fa fa-minus f"></i>
+                                        <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
                                 <b-collapse v-if="eventList.length >= 1" v-for="event in eventList" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
@@ -64,8 +64,8 @@
                                 <b-card-header header-tag="header" class="p-1" role="tab">
                                     <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
                                         Sales
-                                        <!--<i v-if="togglePromos"  class="fa fa-minus f"></i>-->
-                                        <!--<i v-else  class="fa fa-plus"></i>-->
+                                        <i v-if="togglePromos"  class="fa fa-minus f"></i>
+                                        <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
                                 
