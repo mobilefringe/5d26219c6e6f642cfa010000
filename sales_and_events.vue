@@ -73,30 +73,30 @@
                                     <b-card-body>
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <div v-if="promo.no_logo" class="store_details_image center-block">
-                                                    <div class="no_logo">
-                                                        <p class="store_details_name">{{ promo.store_name }}</p>
-                                                    </div>    
-                                                </div>
-                                                <div v-else class="store_details_image center-block">
-                                                    <img :src="promo.image_url" alt="" class="max_img" />
-                                                </div>
+                                                <!--<div v-if="promo.no_logo" class="store_details_image center-block">-->
+                                                <!--    <div class="no_logo">-->
+                                                <!--        <p class="store_details_name">{{ promo.store_name }}</p>-->
+                                                <!--    </div>    -->
+                                                <!--</div>-->
+                                                <!--<div v-else class="store_details_image center-block">-->
+                                                <!--    <img :src="promo.image_url" alt="" class="max_img" />-->
+                                                <!--</div>-->
                                             </div>
                                             <div class="col-md-7">
-                                                <h3 class="promo_name">{{promo.name}}</h3>
-                                                <p class="promo_store_name">
-                                                    <router-link v-if="promo.promotionable_type == 'Store'" :to="'/stores/'+ promo.store.slug">
-                                                        {{ promo.store.name }}
-                                                    </router-link>
-                                                    <span v-else>{{ property.name }}</span>
-                                                    <span>| </span>
-                                                    <span v-if="isMultiDay(promo)" class="promo_date">{{ promo.start_date | moment("MMM D", timezone)}} - {{ promo.end_date | moment("MMM D", timezone)}}</span>
-                                                    <span v-else class="promo_date">{{ promo.start_date | moment("MMM D", timezone)}}</span>
-                                                </p>
-                                                <div class="promo_desc" v-html="promo.description_short"></div>
-                                                <router-link :to="'/promotions/'+ promo.slug" >
-						                            <i class="fa fa-caret-right"></i> <span class="read_more">View Promotion Details</span>
-				                                </router-link>
+                                                <!--<h3 class="promo_name">{{promo.name}}</h3>-->
+                                                <!--<p class="promo_store_name">-->
+                                                <!--    <router-link v-if="promo.promotionable_type == 'Store'" :to="'/stores/'+ promo.store.slug">-->
+                                                <!--        {{ promo.store.name }}-->
+                                                <!--    </router-link>-->
+                                                <!--    <span v-else>{{ property.name }}</span>-->
+                                                <!--    <span>| </span>-->
+                                                <!--    <span v-if="isMultiDay(promo)" class="promo_date">{{ promo.start_date | moment("MMM D", timezone)}} - {{ promo.end_date | moment("MMM D", timezone)}}</span>-->
+                                                <!--    <span v-else class="promo_date">{{ promo.start_date | moment("MMM D", timezone)}}</span>-->
+                                                <!--</p>-->
+                                  <!--              <div class="promo_desc" v-html="promo.description_short"></div>-->
+                                  <!--              <router-link :to="'/promotions/'+ promo.slug" >-->
+						                            <!--<i class="fa fa-caret-right"></i> <span class="read_more">View Promotion Details</span>-->
+				                              <!--  </router-link>-->
                                             </div>
                                         </div>
                                         <hr class="promo_separator" />
