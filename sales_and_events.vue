@@ -202,7 +202,8 @@
                     if (sortedPromos.length > 0) {
                         this.togglePromos = true;
                     }
-                    return sortedPromos;
+                    // return sortedPromos;
+                    return null;
                 }
             },
             methods: {
