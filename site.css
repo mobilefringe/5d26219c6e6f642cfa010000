@@ -1465,6 +1465,7 @@ footer {
     }
     img {
         padding: 10px;
+        max-height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
